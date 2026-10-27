@@ -1,0 +1,357 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  background-color: #06080c;
+  color: #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Top Toolbar */
+#toolbar {
+  position: relative;
+  background: rgba(14, 18, 26, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 30;
+}
+
+.toolbar-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.control-group label {
+  color: #8292a1;
+}
+
+select,
+input[type="range"],
+input[type="number"] {
+  background: #19202a;
+  color: #fff;
+  border: 1px solid #2e3a4b;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-toggle,
+.btn-action,
+.btn-upload,
+.btn-calibrate {
+  background: #202734;
+  border: 1px solid #334154;
+  color: #c9d2de;
+  padding: 5px 11px;
+  border-radius: 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-toggle:hover,
+.btn-action:hover {
+  background: #2a3446;
+  color: #fff;
+}
+
+.btn-toggle.active {
+  background: #2979ff;
+  border-color: #5393ff;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 12px rgba(41, 121, 255, 0.5);
+}
+
+.btn-upload {
+  background: #1b3a2b;
+  border-color: #2e6b4e;
+  color: #7ef7b8;
+}
+
+.btn-upload:hover {
+  background: #234c38;
+}
+
+.btn-calibrate {
+  background: #2b213a;
+  border-color: #654396;
+  color: #e0baff;
+  font-weight: 600;
+}
+
+.btn-calibrate.active {
+  background: #7c4dff;
+  border-color: #b388ff;
+  color: #fff;
+  box-shadow: 0 0 14px rgba(124, 77, 255, 0.6);
+}
+
+/* Main Workspace Area */
+#workspace {
+  position: relative;
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  background: #080a0f;
+}
+
+#stage-container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px;
+}
+
+#map-viewport {
+  position: relative;
+  display: inline-block;
+  transform-origin: center center;
+  transition: transform 0.05s linear;
+}
+
+#map-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 92vw;
+  max-height: 82vh;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  background: #0b0e14;
+}
+
+#bg-image {
+  display: block;
+  max-width: 92vw;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  opacity: 0.45;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+#simCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+/* Floating Sequential Mode Banner */
+#seq-banner {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 14, 38, 0.94);
+  border: 1px solid #9e67ff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.75);
+  z-index: 25;
+}
+
+#seq-banner.visible {
+  display: flex;
+}
+
+/* Hover Station Card */
+#station-card {
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  background: rgba(15, 21, 30, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 9px 14px;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 20;
+}
+
+#station-card.visible {
+  opacity: 1;
+}
+
+#station-card h3 {
+  font-size: 13px;
+  margin-bottom: 2px;
+  color: #fff;
+}
+
+#station-card p {
+  font-size: 11px;
+  color: #8ca0b3;
+  font-family: monospace;
+}
+
+/* Zoom Pill */
+#zoom-controls {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  background: rgba(15, 21, 30, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  z-index: 20;
+}
+
+/* Right-hand Calibration Sidebar */
+#calibration-drawer {
+  width: 330px;
+  background: #0d1118;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  overflow-y: auto;
+  z-index: 25;
+}
+
+#calibration-drawer.open {
+  display: flex;
+}
+
+.drawer-section {
+  background: #131924;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.drawer-section h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #8fa4b8;
+  margin-bottom: 2px;
+}
+
+.drawer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.drawer-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.drawer-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+}
+
+.btn-primary {
+  background: #2962ff;
+  border: 1px solid #538bff;
+  color: #fff;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background: #1e50e2;
+}
+
+.btn-purple {
+  background: #5e35b1;
+  border: 1px solid #9162e4;
+  color: #fff;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.btn-purple:hover {
+  background: #6f42c1;
+}
+
+.btn-danger {
+  background: #3b1c22;
+  border: 1px solid #7a323e;
+  color: #ff9ea8;
+  justify-content: center;
+}
+
+.btn-danger:hover {
+  background: #52232c;
+}
+
+.hint-text {
+  font-size: 11px;
+  color: #7c8f9e;
+  line-height: 1.4;
+}
+
+/* Status Bar */
+#status-bar {
+  height: 30px;
+  background: #050608;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  font-size: 11px;
+  color: #6c7d8e;
+  font-family: monospace;
+  z-index: 30;
+}

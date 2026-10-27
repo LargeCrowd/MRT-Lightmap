@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Singapore MRT LED Table Simulator</title>
+  <link rel="stylesheet" href="./src/styles/main.css">
+</head>
+<body>
+
+  <!-- Top Controls Toolbar -->
+  <div id="toolbar">
+    <div class="toolbar-section">
+      <div class="control-group">
+        <label>Map:</label>
+        <button class="btn-toggle active" data-map="cliff">1. Cliff Tan</button>
+        <button class="btn-toggle" data-map="official">2. Official LTA</button>
+        <button class="btn-toggle" data-map="realistic">3. Geographic</button>
+      </div>
+
+      <div class="control-group">
+        <input type="file" id="imgUpload" accept="image/*" style="display:none">
+        <button class="btn-upload" id="uploadBtn" title="Load local map image">📁 Load Image</button>
+        <label>Dim:</label>
+        <input type="range" id="opacitySlider" min="0" max="100" value="45" style="width:65px">
+      </div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="control-group">
+        <label>LED Mode:</label>
+        <select id="ledModeSelect">
+          <option value="intermediate">Discrete Step (Train + Nodes)</option>
+          <option value="station">Station Arrival Blink</option>
+          <option value="continuous">Continuous Comet</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label>Mid LEDs:</label>
+        <select id="midLedSelect">
+          <option value="0">0 (Stations Only)</option>
+          <option value="1">1 per segment</option>
+          <option value="2" selected>2 per segment</option>
+          <option value="3">3 per segment</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label>Labels:</label>
+        <select id="labelModeSelect">
+          <option value="major">Major Interchanges</option>
+          <option value="all">All Stations</option>
+          <option value="none">Hidden (Image Text)</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <button class="btn-action" id="toggleTracksBtn" title="Toggle vector track overlay lines">Tracks: ON</button>
+        <button class="btn-calibrate" id="toggleCalibrateBtn">🎯 Calibrate Layout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Workspace -->
+  <div id="workspace">
+    <div id="stage-container">
+      <!-- Floating Sequential Click-to-Place Prompt -->
+      <div id="seq-banner">
+        <span id="seq-banner-text">Click on map to place station...</span>
+        <button class="btn-action" id="seqPrevBtn">◀ Prev</button>
+        <button class="btn-action" id="seqNextBtn">Skip ▶</button>
+        <button class="btn-action btn-danger" id="seqStopBtn">✕ Stop</button>
+      </div>
+
+      <div id="map-viewport">
+        <div id="map-wrapper">
+          <img id="bg-image" alt="" style="display:none">
+          <canvas id="simCanvas" width="1360" height="860"></canvas>
+        </div>
+      </div>
+
+      <div id="station-card">
+        <h3 id="card-name">Station</h3>
+        <p id="card-lines">Line</p>
+        <p id="card-coords"></p>
+      </div>
+
+      <div id="zoom-controls">
+        <button class="btn-action" id="zoomOutBtn">−</button>
+        <span id="zoomLabel">100%</span>
+        <button class="btn-action" id="zoomInBtn">+</button>
+        <button class="btn-action" id="zoomResetBtn">Reset</button>
+      </div>
+    </div>
+
+    <!-- Calibration & Auto-Snap Sidebar Drawer -->
+    <aside id="calibration-drawer">
+      <div class="drawer-section">
+        <h4>1. Target Line & Filter</h4>
+        <div class="drawer-row">
+          <label for="calLineSelect">Target Line:</label>
+          <select id="calLineSelect" style="flex:1">
+            <option value="ALL">All Lines</option>
+            <option value="EWL">EWL (East-West Green)</option>
+            <option value="NSL">NSL (North-South Red)</option>
+            <option value="CCL">CCL (Circle Orange)</option>
+            <option value="NEL">NEL (North East Purple)</option>
+            <option value="DTL">DTL (Downtown Blue)</option>
+            <option value="TEL">TEL (Thomson Brown)</option>
+            <option value="BPLRT">Bukit Panjang LRT</option>
+            <option value="SKLRT">Sengkang LRT</option>
+            <option value="PGLRT">Punggol LRT</option>
+          </select>
+        </div>
+        <div class="drawer-row">
+          <label><input type="checkbox" id="soloLineCheck"> Solo selected line on canvas</label>
+        </div>
+        <div class="drawer-row">
+          <label><input type="checkbox" id="linkInterchangeCheck" checked> Link shared interchanges</label>
+        </div>
+      </div>
+
+      <div class="drawer-section">
+        <h4>2. Auto-Detect & Snap to Image</h4>
+        <p class="hint-text">Analyzes underlying map image pixels to snap stations onto colored tracks & station dots.</p>
+        <div class="drawer-row">
+          <label>Snap Radius:</label>
+          <input type="range" id="snapRadiusSlider" min="8" max="60" value="26" style="width:110px">
+          <span id="snapRadiusVal">26px</span>
+        </div>
+        <div class="drawer-row">
+          <label><input type="checkbox" id="autoSnapDropCheck"> Auto-snap when dragging (or hold Shift)</label>
+        </div>
+        <button class="btn-action btn-primary" id="autoSnapLineBtn">✨ Auto-Snap Target Line to Image</button>
+        <button class="btn-action" id="autoFitCircleBtn" style="justify-content:center">⭕ Detect & Fit Circle Line Ring</button>
+      </div>
+
+      <div class="drawer-section">
+        <h4>3. Interactive Placement</h4>
+        <p class="hint-text">Drag any station directly on the map, or trace an entire line station-by-station:</p>
+        <button class="btn-action btn-purple" id="startSeqBtn">🖱️ Sequential Click-to-Place Line</button>
+        <button class="btn-action" id="distributeBtn" style="justify-content:center" title="Evenly space stations between the previous clicked station and the currently selected station">📏 Distribute Between Last 2 Clicked</button>
+        <div class="drawer-row" id="selectedStnInfo" style="color:#9ecbff; font-family:monospace; font-size:11px;">
+          Selected: None
+        </div>
+      </div>
+
+      <div class="drawer-section">
+        <h4>4. Nudge & Scale Coordinates</h4>
+        <div class="drawer-grid-3">
+          <span></span>
+          <button class="btn-action" data-nudge="0,-0.003" style="justify-content:center">▲ Up</button>
+          <span></span>
+          <button class="btn-action" data-nudge="-0.003,0" style="justify-content:center">◀ Left</button>
+          <button class="btn-action" data-nudge="0,0.003" style="justify-content:center">▼ Down</button>
+          <button class="btn-action" data-nudge="0.003,0" style="justify-content:center">▶ Right</button>
+        </div>
+        <div class="drawer-grid-2" style="margin-top:4px;">
+          <button class="btn-action" data-scale="0.99,1" style="justify-content:center">Shrink X</button>
+          <button class="btn-action" data-scale="1.01,1" style="justify-content:center">Expand X</button>
+          <button class="btn-action" data-scale="1,0.99" style="justify-content:center">Shrink Y</button>
+          <button class="btn-action" data-scale="1,1.01" style="justify-content:center">Expand Y</button>
+        </div>
+      </div>
+
+      <div class="drawer-section">
+        <h4>5. History & Export JSON</h4>
+        <div class="drawer-grid-2">
+          <button class="btn-action" id="undoBtn" style="justify-content:center">↶ Undo</button>
+          <button class="btn-action" id="redoBtn" style="justify-content:center">↷ Redo</button>
+        </div>
+        <div class="drawer-grid-2">
+          <button class="btn-action btn-primary" id="exportJsonBtn">💾 Save JSON</button>
+          <button class="btn-action" id="copyJsonBtn" style="justify-content:center">📋 Copy JSON</button>
+        </div>
+        <div class="drawer-grid-2">
+          <input type="file" id="jsonUpload" accept=".json,application/json" style="display:none">
+          <button class="btn-action" id="importJsonBtn" style="justify-content:center">📂 Load JSON</button>
+          <button class="btn-action btn-danger" id="resetMapBtn">↺ Reset Default</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Bottom Status Bar -->
+  <div id="status-bar">
+    <div id="img-status">MODE: CLIFF TAN | DROP MAP IMAGE OR CLICK "LOAD IMAGE"</div>
+    <div id="telemetry">TRAINS RUNNING...</div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

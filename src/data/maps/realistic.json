@@ -1,0 +1,1114 @@
+{
+  "mapId": "realistic",
+  "name": "Geographic Scale Map",
+  "lines": {
+    "EWL": [
+      {
+        "name": "Tuas Link",
+        "x": 0.0789,
+        "y": 0.4831
+      },
+      {
+        "name": "Tuas West Rd",
+        "x": 0.081,
+        "y": 0.5387
+      },
+      {
+        "name": "Tuas Crescent",
+        "x": 0.1001,
+        "y": 0.5712
+      },
+      {
+        "name": "Gul Circle",
+        "x": 0.1237,
+        "y": 0.5748
+      },
+      {
+        "name": "Joo Koon",
+        "x": 0.1591,
+        "y": 0.5467
+      },
+      {
+        "name": "Pioneer",
+        "x": 0.1975,
+        "y": 0.5114
+      },
+      {
+        "name": "Boon Lay",
+        "x": 0.2146,
+        "y": 0.5098
+      },
+      {
+        "name": "Lakeside",
+        "x": 0.245,
+        "y": 0.4864
+      },
+      {
+        "name": "Chinese Garden",
+        "x": 0.2692,
+        "y": 0.4947
+      },
+      {
+        "name": "Jurong East",
+        "x": 0.2868,
+        "y": 0.528
+      },
+      {
+        "name": "Clementi",
+        "x": 0.3346,
+        "y": 0.5887
+      },
+      {
+        "name": "Dover",
+        "x": 0.3613,
+        "y": 0.6058
+      },
+      {
+        "name": "Buona Vista",
+        "x": 0.3832,
+        "y": 0.6224
+      },
+      {
+        "name": "Commonwealth",
+        "x": 0.401,
+        "y": 0.6388
+      },
+      {
+        "name": "Queenstown",
+        "x": 0.4166,
+        "y": 0.6667
+      },
+      {
+        "name": "Redhill",
+        "x": 0.4384,
+        "y": 0.6839
+      },
+      {
+        "name": "Tiong Bahru",
+        "x": 0.4593,
+        "y": 0.6971
+      },
+      {
+        "name": "Outram Park",
+        "x": 0.4825,
+        "y": 0.7075
+      },
+      {
+        "name": "Tanjong Pagar",
+        "x": 0.4963,
+        "y": 0.7306
+      },
+      {
+        "name": "Raffles Place",
+        "x": 0.5086,
+        "y": 0.7066
+      },
+      {
+        "name": "City Hall",
+        "x": 0.5106,
+        "y": 0.6715
+      },
+      {
+        "name": "Bugis",
+        "x": 0.518,
+        "y": 0.6458
+      },
+      {
+        "name": "Lavender",
+        "x": 0.5312,
+        "y": 0.6188
+      },
+      {
+        "name": "Kallang",
+        "x": 0.5498,
+        "y": 0.6031
+      },
+      {
+        "name": "Aljunied",
+        "x": 0.5726,
+        "y": 0.5872
+      },
+      {
+        "name": "Paya Lebar",
+        "x": 0.5912,
+        "y": 0.5837
+      },
+      {
+        "name": "Eunos",
+        "x": 0.6136,
+        "y": 0.5759
+      },
+      {
+        "name": "Kembangan",
+        "x": 0.6329,
+        "y": 0.5707
+      },
+      {
+        "name": "Bedok",
+        "x": 0.6674,
+        "y": 0.5599
+      },
+      {
+        "name": "Tanah Merah",
+        "x": 0.7011,
+        "y": 0.5506
+      },
+      {
+        "name": "Simei",
+        "x": 0.7142,
+        "y": 0.4909
+      },
+      {
+        "name": "Tampines",
+        "x": 0.695,
+        "y": 0.4434
+      },
+      {
+        "name": "Pasir Ris",
+        "x": 0.704,
+        "y": 0.3897
+      }
+    ],
+    "NSL": [
+      {
+        "name": "Jurong East",
+        "x": 0.2868,
+        "y": 0.528
+      },
+      {
+        "name": "Bukit Batok",
+        "x": 0.3027,
+        "y": 0.4704
+      },
+      {
+        "name": "Bukit Gombak",
+        "x": 0.3065,
+        "y": 0.4353
+      },
+      {
+        "name": "Choa Chu Kang",
+        "x": 0.2911,
+        "y": 0.3402
+      },
+      {
+        "name": "Yew Tee",
+        "x": 0.2982,
+        "y": 0.2959
+      },
+      {
+        "name": "Kranji",
+        "x": 0.3277,
+        "y": 0.1959
+      },
+      {
+        "name": "Marsiling",
+        "x": 0.3521,
+        "y": 0.1701
+      },
+      {
+        "name": "Woodlands",
+        "x": 0.3784,
+        "y": 0.1545
+      },
+      {
+        "name": "Admiralty",
+        "x": 0.4065,
+        "y": 0.1406
+      },
+      {
+        "name": "Sembawang",
+        "x": 0.4459,
+        "y": 0.1096
+      },
+      {
+        "name": "Canberra",
+        "x": 0.4682,
+        "y": 0.1428
+      },
+      {
+        "name": "Yishun",
+        "x": 0.475,
+        "y": 0.182
+      },
+      {
+        "name": "Khatib",
+        "x": 0.4715,
+        "y": 0.2244
+      },
+      {
+        "name": "Yio Chu Kang",
+        "x": 0.4948,
+        "y": 0.3529
+      },
+      {
+        "name": "Ang Mo Kio",
+        "x": 0.5059,
+        "y": 0.396
+      },
+      {
+        "name": "Bishan",
+        "x": 0.5019,
+        "y": 0.4629
+      },
+      {
+        "name": "Braddell",
+        "x": 0.4983,
+        "y": 0.5006
+      },
+      {
+        "name": "Toa Payoh",
+        "x": 0.5001,
+        "y": 0.5288
+      },
+      {
+        "name": "Novena",
+        "x": 0.4934,
+        "y": 0.5712
+      },
+      {
+        "name": "Newton",
+        "x": 0.4813,
+        "y": 0.5976
+      },
+      {
+        "name": "Orchard",
+        "x": 0.4684,
+        "y": 0.6345
+      },
+      {
+        "name": "Somerset",
+        "x": 0.4838,
+        "y": 0.6467
+      },
+      {
+        "name": "Dhoby Ghaut",
+        "x": 0.4951,
+        "y": 0.6463
+      },
+      {
+        "name": "City Hall",
+        "x": 0.5106,
+        "y": 0.6715
+      },
+      {
+        "name": "Raffles Place",
+        "x": 0.5086,
+        "y": 0.7066
+      },
+      {
+        "name": "Marina Bay",
+        "x": 0.5175,
+        "y": 0.7444
+      },
+      {
+        "name": "Marina South Pier",
+        "x": 0.5317,
+        "y": 0.7478
+      }
+    ],
+    "CCL": [
+      {
+        "name": "Dhoby Ghaut",
+        "x": 0.4951,
+        "y": 0.6463
+      },
+      {
+        "name": "Bras Basah",
+        "x": 0.5066,
+        "y": 0.6566
+      },
+      {
+        "name": "Esplanade",
+        "x": 0.5166,
+        "y": 0.6715
+      },
+      {
+        "name": "Promenade",
+        "x": 0.5266,
+        "y": 0.6699
+      },
+      {
+        "name": "Nicoll Highway",
+        "x": 0.5334,
+        "y": 0.6474
+      },
+      {
+        "name": "Stadium",
+        "x": 0.5572,
+        "y": 0.6359
+      },
+      {
+        "name": "Mountbatten",
+        "x": 0.5715,
+        "y": 0.6226
+      },
+      {
+        "name": "Dakota",
+        "x": 0.5835,
+        "y": 0.6165
+      },
+      {
+        "name": "Paya Lebar",
+        "x": 0.5912,
+        "y": 0.5837
+      },
+      {
+        "name": "MacPherson",
+        "x": 0.5844,
+        "y": 0.5504
+      },
+      {
+        "name": "Tai Seng",
+        "x": 0.5826,
+        "y": 0.5188
+      },
+      {
+        "name": "Bartley",
+        "x": 0.5655,
+        "y": 0.4939
+      },
+      {
+        "name": "Serangoon",
+        "x": 0.5511,
+        "y": 0.4675
+      },
+      {
+        "name": "Lorong Chuan",
+        "x": 0.5346,
+        "y": 0.4605
+      },
+      {
+        "name": "Bishan",
+        "x": 0.5019,
+        "y": 0.4629
+      },
+      {
+        "name": "Marymount",
+        "x": 0.4839,
+        "y": 0.4699
+      },
+      {
+        "name": "Caldecott",
+        "x": 0.4847,
+        "y": 0.5116
+      },
+      {
+        "name": "Botanic Gardens",
+        "x": 0.4371,
+        "y": 0.5662
+      },
+      {
+        "name": "Farrer Road",
+        "x": 0.4203,
+        "y": 0.583
+      },
+      {
+        "name": "Holland Village",
+        "x": 0.3977,
+        "y": 0.6016
+      },
+      {
+        "name": "Buona Vista",
+        "x": 0.3832,
+        "y": 0.6224
+      },
+      {
+        "name": "one-north",
+        "x": 0.3793,
+        "y": 0.6453
+      },
+      {
+        "name": "Kent Ridge",
+        "x": 0.3731,
+        "y": 0.6692
+      },
+      {
+        "name": "Haw Par Villa",
+        "x": 0.3681,
+        "y": 0.7103
+      },
+      {
+        "name": "Pasir Panjang",
+        "x": 0.3875,
+        "y": 0.7312
+      },
+      {
+        "name": "Labrador Park",
+        "x": 0.4112,
+        "y": 0.744
+      },
+      {
+        "name": "Telok Blangah",
+        "x": 0.4249,
+        "y": 0.7499
+      },
+      {
+        "name": "HarbourFront",
+        "x": 0.4481,
+        "y": 0.7702
+      },
+      {
+        "name": "Keppel",
+        "x": 0.4676,
+        "y": 0.7539
+      },
+      {
+        "name": "Cantonment",
+        "x": 0.4802,
+        "y": 0.745
+      },
+      {
+        "name": "Prince Edward Rd",
+        "x": 0.5033,
+        "y": 0.7433
+      },
+      {
+        "name": "Marina Bay",
+        "x": 0.5175,
+        "y": 0.7444
+      },
+      {
+        "name": "Bayfront",
+        "x": 0.5231,
+        "y": 0.7086
+      },
+      {
+        "name": "Promenade",
+        "x": 0.5266,
+        "y": 0.6699
+      }
+    ],
+    "NEL": [
+      {
+        "name": "HarbourFront",
+        "x": 0.4481,
+        "y": 0.7702
+      },
+      {
+        "name": "Outram Park",
+        "x": 0.4825,
+        "y": 0.7075
+      },
+      {
+        "name": "Chinatown",
+        "x": 0.4932,
+        "y": 0.7009
+      },
+      {
+        "name": "Clarke Quay",
+        "x": 0.4984,
+        "y": 0.6868
+      },
+      {
+        "name": "Dhoby Ghaut",
+        "x": 0.4951,
+        "y": 0.6463
+      },
+      {
+        "name": "Little India",
+        "x": 0.5039,
+        "y": 0.6235
+      },
+      {
+        "name": "Farrer Park",
+        "x": 0.5146,
+        "y": 0.602
+      },
+      {
+        "name": "Boon Keng",
+        "x": 0.5296,
+        "y": 0.5741
+      },
+      {
+        "name": "Potong Pasir",
+        "x": 0.5438,
+        "y": 0.5328
+      },
+      {
+        "name": "Woodleigh",
+        "x": 0.5464,
+        "y": 0.5036
+      },
+      {
+        "name": "Serangoon",
+        "x": 0.5511,
+        "y": 0.4675
+      },
+      {
+        "name": "Kovan",
+        "x": 0.576,
+        "y": 0.4287
+      },
+      {
+        "name": "Hougang",
+        "x": 0.5884,
+        "y": 0.3899
+      },
+      {
+        "name": "Buangkok",
+        "x": 0.5919,
+        "y": 0.3469
+      },
+      {
+        "name": "Sengkang",
+        "x": 0.5974,
+        "y": 0.3168
+      },
+      {
+        "name": "Punggol",
+        "x": 0.612,
+        "y": 0.2681
+      },
+      {
+        "name": "Punggol Coast",
+        "x": 0.6302,
+        "y": 0.2312
+      }
+    ],
+    "DTL": [
+      {
+        "name": "Bukit Panjang",
+        "x": 0.3264,
+        "y": 0.3596
+      },
+      {
+        "name": "Cashew",
+        "x": 0.3325,
+        "y": 0.397
+      },
+      {
+        "name": "Hillview",
+        "x": 0.3379,
+        "y": 0.4223
+      },
+      {
+        "name": "Hume",
+        "x": 0.3427,
+        "y": 0.4567
+      },
+      {
+        "name": "Beauty World",
+        "x": 0.3553,
+        "y": 0.4982
+      },
+      {
+        "name": "King Albert Park",
+        "x": 0.3692,
+        "y": 0.5182
+      },
+      {
+        "name": "Sixth Avenue",
+        "x": 0.399,
+        "y": 0.5351
+      },
+      {
+        "name": "Tan Kah Kee",
+        "x": 0.419,
+        "y": 0.5531
+      },
+      {
+        "name": "Botanic Gardens",
+        "x": 0.4371,
+        "y": 0.5662
+      },
+      {
+        "name": "Stevens",
+        "x": 0.457,
+        "y": 0.5762
+      },
+      {
+        "name": "Newton",
+        "x": 0.4813,
+        "y": 0.5976
+      },
+      {
+        "name": "Little India",
+        "x": 0.5039,
+        "y": 0.6235
+      },
+      {
+        "name": "Rochor",
+        "x": 0.5095,
+        "y": 0.6315
+      },
+      {
+        "name": "Bugis",
+        "x": 0.518,
+        "y": 0.6458
+      },
+      {
+        "name": "Promenade",
+        "x": 0.5266,
+        "y": 0.6699
+      },
+      {
+        "name": "Bayfront",
+        "x": 0.5231,
+        "y": 0.7086
+      },
+      {
+        "name": "Downtown",
+        "x": 0.5085,
+        "y": 0.7167
+      },
+      {
+        "name": "Telok Ayer",
+        "x": 0.5019,
+        "y": 0.7096
+      },
+      {
+        "name": "Chinatown",
+        "x": 0.4932,
+        "y": 0.7009
+      },
+      {
+        "name": "Fort Canning",
+        "x": 0.494,
+        "y": 0.6737
+      },
+      {
+        "name": "Bencoolen",
+        "x": 0.5068,
+        "y": 0.6498
+      },
+      {
+        "name": "Jalan Besar",
+        "x": 0.5161,
+        "y": 0.6254
+      },
+      {
+        "name": "Bendemeer",
+        "x": 0.5316,
+        "y": 0.5966
+      },
+      {
+        "name": "Geylang Bahru",
+        "x": 0.5501,
+        "y": 0.5684
+      },
+      {
+        "name": "Mattar",
+        "x": 0.5727,
+        "y": 0.5485
+      },
+      {
+        "name": "MacPherson",
+        "x": 0.5844,
+        "y": 0.5504
+      },
+      {
+        "name": "Ubi",
+        "x": 0.6055,
+        "y": 0.5382
+      },
+      {
+        "name": "Kaki Bukit",
+        "x": 0.6235,
+        "y": 0.5208
+      },
+      {
+        "name": "Bedok North",
+        "x": 0.6425,
+        "y": 0.521
+      },
+      {
+        "name": "Bedok Reservoir",
+        "x": 0.6721,
+        "y": 0.5136
+      },
+      {
+        "name": "Tampines West",
+        "x": 0.6849,
+        "y": 0.4833
+      },
+      {
+        "name": "Tampines",
+        "x": 0.7019,
+        "y": 0.4426
+      },
+      {
+        "name": "Tampines East",
+        "x": 0.7187,
+        "y": 0.4444
+      },
+      {
+        "name": "Upper Changi",
+        "x": 0.7307,
+        "y": 0.4956
+      },
+      {
+        "name": "Expo",
+        "x": 0.7338,
+        "y": 0.5199
+      },
+      {
+        "name": "Xilin",
+        "x": 0.7372,
+        "y": 0.5423
+      },
+      {
+        "name": "Sungei Bedok",
+        "x": 0.7216,
+        "y": 0.5708
+      }
+    ],
+    "TEL": [
+      {
+        "name": "Woodlands North",
+        "x": 0.3783,
+        "y": 0.1152
+      },
+      {
+        "name": "Woodlands",
+        "x": 0.3784,
+        "y": 0.1545
+      },
+      {
+        "name": "Woodlands South",
+        "x": 0.3916,
+        "y": 0.1886
+      },
+      {
+        "name": "Springleaf",
+        "x": 0.4419,
+        "y": 0.2958
+      },
+      {
+        "name": "Lentor",
+        "x": 0.479,
+        "y": 0.3418
+      },
+      {
+        "name": "Mayflower",
+        "x": 0.4795,
+        "y": 0.386
+      },
+      {
+        "name": "Bright Hill",
+        "x": 0.474,
+        "y": 0.418
+      },
+      {
+        "name": "Upper Thomson",
+        "x": 0.4715,
+        "y": 0.4512
+      },
+      {
+        "name": "Caldecott",
+        "x": 0.4847,
+        "y": 0.5116
+      },
+      {
+        "name": "Mount Pleasant",
+        "x": 0.4766,
+        "y": 0.5431
+      },
+      {
+        "name": "Stevens",
+        "x": 0.457,
+        "y": 0.5762
+      },
+      {
+        "name": "Napier",
+        "x": 0.4429,
+        "y": 0.6216
+      },
+      {
+        "name": "Orchard Boulevard",
+        "x": 0.4532,
+        "y": 0.6374
+      },
+      {
+        "name": "Orchard",
+        "x": 0.4684,
+        "y": 0.6345
+      },
+      {
+        "name": "Great World",
+        "x": 0.4726,
+        "y": 0.6638
+      },
+      {
+        "name": "Havelock",
+        "x": 0.4728,
+        "y": 0.6898
+      },
+      {
+        "name": "Outram Park",
+        "x": 0.4825,
+        "y": 0.7075
+      },
+      {
+        "name": "Maxwell",
+        "x": 0.4932,
+        "y": 0.7164
+      },
+      {
+        "name": "Shenton Way",
+        "x": 0.5069,
+        "y": 0.7254
+      },
+      {
+        "name": "Marina Bay",
+        "x": 0.5175,
+        "y": 0.7444
+      },
+      {
+        "name": "Gardens by the Bay",
+        "x": 0.5413,
+        "y": 0.7234
+      },
+      {
+        "name": "Founders' Memorial",
+        "x": 0.5454,
+        "y": 0.6786
+      },
+      {
+        "name": "Tanjong Rhu",
+        "x": 0.5557,
+        "y": 0.6555
+      },
+      {
+        "name": "Katong Park",
+        "x": 0.5789,
+        "y": 0.6523
+      },
+      {
+        "name": "Tanjong Katong",
+        "x": 0.6023,
+        "y": 0.6467
+      },
+      {
+        "name": "Marine Parade",
+        "x": 0.6166,
+        "y": 0.6362
+      },
+      {
+        "name": "Marine Terrace",
+        "x": 0.6396,
+        "y": 0.6199
+      },
+      {
+        "name": "Siglap",
+        "x": 0.6656,
+        "y": 0.6105
+      },
+      {
+        "name": "Bayshore",
+        "x": 0.6893,
+        "y": 0.6004
+      },
+      {
+        "name": "Bedok South",
+        "x": 0.7077,
+        "y": 0.5857
+      },
+      {
+        "name": "Sungei Bedok",
+        "x": 0.7216,
+        "y": 0.5708
+      }
+    ],
+    "BPLRT": [
+      {
+        "name": "Choa Chu Kang",
+        "x": 0.2911,
+        "y": 0.3402
+      },
+      {
+        "name": "South View",
+        "x": 0.2957,
+        "y": 0.3603
+      },
+      {
+        "name": "Keat Hong",
+        "x": 0.3105,
+        "y": 0.3705
+      },
+      {
+        "name": "Teck Whye",
+        "x": 0.3247,
+        "y": 0.3642
+      },
+      {
+        "name": "Bukit Panjang",
+        "x": 0.3264,
+        "y": 0.3596
+      },
+      {
+        "name": "Petir",
+        "x": 0.339,
+        "y": 0.3698
+      },
+      {
+        "name": "Pending",
+        "x": 0.3466,
+        "y": 0.3707
+      },
+      {
+        "name": "Bangkit",
+        "x": 0.3483,
+        "y": 0.3557
+      },
+      {
+        "name": "Fajar",
+        "x": 0.342,
+        "y": 0.3507
+      },
+      {
+        "name": "Segar",
+        "x": 0.3422,
+        "y": 0.3304
+      },
+      {
+        "name": "Jelapang",
+        "x": 0.331,
+        "y": 0.3363
+      },
+      {
+        "name": "Senja",
+        "x": 0.3293,
+        "y": 0.354
+      },
+      {
+        "name": "Bukit Panjang",
+        "x": 0.3264,
+        "y": 0.3596
+      }
+    ],
+    "SKLRT": [
+      {
+        "name": "Sengkang",
+        "x": 0.5974,
+        "y": 0.3168
+      },
+      {
+        "name": "Compassvale",
+        "x": 0.6113,
+        "y": 0.3118
+      },
+      {
+        "name": "Rumbia",
+        "x": 0.6133,
+        "y": 0.339
+      },
+      {
+        "name": "Bakau",
+        "x": 0.606,
+        "y": 0.345
+      },
+      {
+        "name": "Kangkar",
+        "x": 0.6006,
+        "y": 0.3457
+      },
+      {
+        "name": "Ranggung",
+        "x": 0.598,
+        "y": 0.3222
+      },
+      {
+        "name": "Sengkang",
+        "x": 0.5974,
+        "y": 0.3168
+      },
+      {
+        "name": "Cheng Lim",
+        "x": 0.586,
+        "y": 0.308
+      },
+      {
+        "name": "Farmway",
+        "x": 0.5778,
+        "y": 0.296
+      },
+      {
+        "name": "Kupang",
+        "x": 0.5575,
+        "y": 0.3044
+      },
+      {
+        "name": "Fernvale",
+        "x": 0.5624,
+        "y": 0.3173
+      },
+      {
+        "name": "Layar",
+        "x": 0.5787,
+        "y": 0.3262
+      },
+      {
+        "name": "Sengkang",
+        "x": 0.5974,
+        "y": 0.3168
+      }
+    ],
+    "PGLRT": [
+      {
+        "name": "Punggol",
+        "x": 0.612,
+        "y": 0.2681
+      },
+      {
+        "name": "Cove",
+        "x": 0.6234,
+        "y": 0.2964
+      },
+      {
+        "name": "Meridian",
+        "x": 0.632,
+        "y": 0.301
+      },
+      {
+        "name": "Coral Edge",
+        "x": 0.6402,
+        "y": 0.3047
+      },
+      {
+        "name": "Riviera",
+        "x": 0.6405,
+        "y": 0.3035
+      },
+      {
+        "name": "Kadaloor",
+        "x": 0.6315,
+        "y": 0.278
+      },
+      {
+        "name": "Punggol",
+        "x": 0.612,
+        "y": 0.2681
+      },
+      {
+        "name": "Sam Kee",
+        "x": 0.6136,
+        "y": 0.256
+      },
+      {
+        "name": "Punggol Point",
+        "x": 0.6186,
+        "y": 0.2258
+      },
+      {
+        "name": "Samudera",
+        "x": 0.6059,
+        "y": 0.2449
+      },
+      {
+        "name": "Nibong",
+        "x": 0.6035,
+        "y": 0.26
+      },
+      {
+        "name": "Sumang",
+        "x": 0.6025,
+        "y": 0.2764
+      },
+      {
+        "name": "Punggol",
+        "x": 0.612,
+        "y": 0.2681
+      }
+    ]
+  }
+}
