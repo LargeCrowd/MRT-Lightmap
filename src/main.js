@@ -15,6 +15,8 @@ const telemetry = document.getElementById('telemetry');
 const stationCard = document.getElementById('station-card');
 const cardName = document.getElementById('card-name');
 const cardLines = document.getElementById('card-lines');
+const cardDirection = document.getElementById('card-direction');
+const cardStatus = document.getElementById('card-status');
 const cardCoords = document.getElementById('card-coords');
 
 const calibrationDrawer = document.getElementById('calibration-drawer');
@@ -207,8 +209,25 @@ canvas.addEventListener('pointermove', (e) => {
 
   if (hovered) {
     cardName.innerText = hovered.name;
-    cardLines.innerText = LINE_STYLES[hovered.lineKey]?.name || hovered.lineKey;
-    cardLines.style.color = LINE_STYLES[hovered.lineKey]?.color || '#fff';
+    const lineMeta = LINE_STYLES[hovered.lineKey];
+    cardLines.innerText = lineMeta?.name || hovered.lineKey;
+    cardLines.style.color = lineMeta?.color || '#fff';
+
+    const activeTrain = simulator.getTrainAtStation(hovered);
+    if (activeTrain && lineMeta?.dirNames) {
+      const dirStr = lineMeta.dirNames[activeTrain.dir] || `Direction ${activeTrain.dir}`;
+      cardDirection.innerText = `🚆 ${dirStr}`;
+      cardStatus.innerText = activeTrain.dwell > 0
+        ? '🟢 Train dwelling at platform'
+        : '🟡 Train approaching / departing';
+    } else if (lineMeta?.dirNames) {
+      cardDirection.innerText = `Directions: ${lineMeta.dirNames['1']} | ${lineMeta.dirNames['-1']}`;
+      cardStatus.innerText = '⚪ Standing by';
+    } else {
+      cardDirection.innerText = '';
+      cardStatus.innerText = '';
+    }
+
     cardCoords.innerText = `x: ${hovered.x.toFixed(4)}, y: ${hovered.y.toFixed(4)}`;
     stationCard.classList.add('visible');
   } else {
@@ -255,6 +274,17 @@ document.getElementById('opacitySlider').addEventListener('input', (e) => {
   bgImage.style.opacity = e.target.value / 100;
 });
 
+const speedSlider = document.getElementById('speedSlider');
+const speedVal = document.getElementById('speedVal');
+if (speedSlider && speedVal) {
+  simulator.trainSpeedMultiplier = Number(speedSlider.value);
+  speedSlider.addEventListener('input', (e) => {
+    const val = Number(e.target.value);
+    simulator.trainSpeedMultiplier = val;
+    speedVal.innerText = `${val.toFixed(1)}x`;
+  });
+}
+
 document.getElementById('ledModeSelect').addEventListener('change', (e) => {
   simulator.ledMode = e.target.value;
 });
@@ -266,6 +296,11 @@ document.getElementById('midLedSelect').addEventListener('change', (e) => {
 
 document.getElementById('labelModeSelect').addEventListener('change', (e) => {
   simulator.labelMode = e.target.value;
+});
+
+document.getElementById('dirFilterSelect').addEventListener('change', (e) => {
+  simulator.directionFilter = e.target.value;
+  updateTelemetry();
 });
 
 const toggleTracksBtn = document.getElementById('toggleTracksBtn');

@@ -22,7 +22,10 @@
         <input type="file" id="imgUpload" accept="image/*" style="display:none">
         <button class="btn-upload" id="uploadBtn" title="Load local map image">📁 Load Image</button>
         <label>Dim:</label>
-        <input type="range" id="opacitySlider" min="0" max="100" value="45" style="width:65px">
+        <input type="range" id="opacitySlider" min="0" max="100" value="45" style="width:55px">
+        <label>Speed:</label>
+        <input type="range" id="speedSlider" min="0.2" max="8" step="0.2" value="1.5" style="width:70px" title="Adjust train movement speed">
+        <span id="speedVal" style="min-width:28px; color:#79c0ff; font-family:monospace;">1.5x</span>
       </div>
     </div>
 
@@ -38,25 +41,34 @@
 
       <div class="control-group">
         <label>Mid LEDs:</label>
-        <select id="midLedSelect">
-          <option value="0">0 (Stations Only)</option>
-          <option value="1">1 per segment</option>
-          <option value="2" selected>2 per segment</option>
-          <option value="3">3 per segment</option>
+        <select id="midLedSelect" title="Uniform LED density per unit distance along tracks">
+          <option value="0" selected>0 (Stations Only - Clean)</option>
+          <option value="1">Low Density (1 / unit dist)</option>
+          <option value="2">Med Density (2 / unit dist)</option>
+          <option value="3">High Density (3 / unit dist)</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label>Direction:</label>
+        <select id="dirFilterSelect">
+          <option value="ALL">Both Directions</option>
+          <option value="1">Outbound / South / East (▶)</option>
+          <option value="-1">Inbound / North / West (◀)</option>
         </select>
       </div>
 
       <div class="control-group">
         <label>Labels:</label>
         <select id="labelModeSelect">
+          <option value="none" selected>Hidden (Image Text)</option>
           <option value="major">Major Interchanges</option>
           <option value="all">All Stations</option>
-          <option value="none">Hidden (Image Text)</option>
         </select>
       </div>
 
       <div class="control-group">
-        <button class="btn-action" id="toggleTracksBtn" title="Toggle vector track overlay lines">Tracks: ON</button>
+        <button class="btn-action" id="toggleTracksBtn" title="Toggle vector track overlay lines">Tracks: OFF</button>
         <button class="btn-calibrate" id="toggleCalibrateBtn">🎯 Calibrate Layout</button>
       </div>
     </div>
@@ -83,7 +95,9 @@
       <div id="station-card">
         <h3 id="card-name">Station</h3>
         <p id="card-lines">Line</p>
-        <p id="card-coords"></p>
+        <p id="card-direction" style="color: #79c0ff; font-weight: 500; margin-top: 3px; font-size: 11px;"></p>
+        <p id="card-status" style="color: #56d364; font-size: 11px; margin-top: 1px;"></p>
+        <p id="card-coords" style="opacity: 0.6; margin-top: 2px;"></p>
       </div>
 
       <div id="zoom-controls">
@@ -111,6 +125,7 @@
             <option value="BPLRT">Bukit Panjang LRT</option>
             <option value="SKLRT">Sengkang LRT</option>
             <option value="PGLRT">Punggol LRT</option>
+            <option value="SX">Sentosa Express (SX)</option>
           </select>
         </div>
         <div class="drawer-row">

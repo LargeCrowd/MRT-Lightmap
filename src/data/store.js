@@ -1,6 +1,6 @@
 import { cliffDefault, officialDefault, realisticDefault } from './maps/index.js';
 
-const STORAGE_KEY_PREFIX = 'mrt_lightmap_coords_v2_';
+const STORAGE_KEY_PREFIX = 'mrt_lightmap_coords_v6_';
 
 const DEFAULTS = {
   cliff: cliffDefault,
@@ -98,6 +98,10 @@ export class MapDataStore {
 
     lines[lineKey][stationIdx].x = clampedX;
     lines[lineKey][stationIdx].y = clampedY;
+    delete lines[lineKey][stationIdx].waypoints;
+    if (stationIdx > 0 && lines[lineKey][stationIdx - 1]) {
+      delete lines[lineKey][stationIdx - 1].waypoints;
+    }
 
     // If interchange linking is enabled (or for loop endpoints on the same LRT line),
     // update matching stations with the same name
@@ -107,6 +111,10 @@ export class MapDataStore {
           if (lines[lKey][i].name === stnName) {
             lines[lKey][i].x = clampedX;
             lines[lKey][i].y = clampedY;
+            delete lines[lKey][i].waypoints;
+            if (i > 0 && lines[lKey][i - 1]) {
+              delete lines[lKey][i - 1].waypoints;
+            }
           }
         }
       }
